@@ -1,0 +1,41 @@
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static '/bootstrap.min.css' %}">
+
+<div>
+  <a href={% url 'aplication:create' %} class="btn btn-outline-dark mt-5">Crear nuevo usuario </a>
+
+
+<table class="table table-bordered table-info mt-5 text-center">
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th> Genero </th>
+            
+            <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in usuarios %}
+                <tr>
+                    <th>{{ user.id }}</th>
+                    <td>{{ user.nombre }}</td>
+                    <td>{{ user.genero }}</td>
+            
+                    <td>
+                         <a href="detalle_{{ user.id }}" class="btn btn-sucess">Ver mas</a>
+                        <a href= "editar_{{ user.id }}" class="btn btn-primary">Editar</a>
+                        <a href="delete_{{ user.id }}" class="btn btn-danger">Eliminar</a> 
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+
+
+
+</div>
+
+

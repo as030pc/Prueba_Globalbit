@@ -1,0 +1,10 @@
+ <div class="container mb-5">
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ user_form.as_p }}
+
+            <button class="btn btn-success">Guardar</button>
+        </form>
+
+    </div>
