@@ -4,6 +4,11 @@
 
 {% block body_class %}template-blogindexpage{% endblock %}
 
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static '/bootstrap.min.css' %}">
+
 {% block content %}
     <h1>{{ page.title }}</h1>
 
